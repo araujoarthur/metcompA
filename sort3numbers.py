@@ -9,21 +9,39 @@ toSort = list()
 
 def selectionSort(listS):
 	lLen = len(listS)
-	tempList = list() 
-	for j in range(0, lLen): #j recebe o j-ésimo menor numero
-		temp = listS[j]
-		oldPosLower = 0
-		for i in range(j, lLen): #iteração sob todos os indices NÃO ORDENADOS
-			if listS[i] < temp:
-				listS[i] = temp
-				oldPosLower = i
-		listS[oldPosLower] = listS[j]
-		listS[j] = temp
-	for i in range(1, len(listS)):
-		print(listS[i])
+	for i in range(0, lLen-1): #j recebe o j-ésimo menor numero
+		lowestPos = i
+		for j in range(i, lLen): #iteração sob todos os indices NÃO ORDENADOS
+			if listS[j] < listS[lowestPos]:
+				lowestPos = j
+		if lowestPos != i:
+			temp = listS[lowestPos]
+			listS[lowestPos] = listS[i]
+			listS[i] = temp
 
-llist = [random.randint(0,10) for i in range(5)]
-selectionSort(llist)
+def bubbleSort(listS):
+	swaps = True
+	while(swaps):
+		swaps = False
+		for i in range(0, len(listS) -1):
+			if listS[i] > listS[i+1]:
+				temp = listS[i]
+				listS[i] = listS[i+1]
+				listS[i+1] = temp
+				if i == len(listS):
+					swaps = False
+			
+
+def mergeSort(listS):
+	pass
+
+
+
+llist = [random.randint(0,50) for i in range(6)]
+print(llist)
+#selectionSort(llist)
+bubbleSort(llist)
+print(llist)
 		
 			 
 			
