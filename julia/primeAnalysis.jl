@@ -17,8 +17,9 @@ module primeAnalysis
             return false
         else
             nearestSquarert = Int(trunc(sqrt(A)))
+            maxFactor = mod(nearestSquarert, 2) == 0 ? nearestSquarert - 1 : nearestSquarert
 
-            for p ∈ nearestSquarert:-1:2
+            for p ∈ maxFactor:-2:2
                 if mod(A,p) == 0
                     return false
                 end
