@@ -1,10 +1,10 @@
-  from typing import Callable
-  import pandas as pd
-  import numpy as np
-  import math
-  import matplotlib.pyplot as plt
+ from typing import Callable
+ import pandas as pd
+ import numpy as np
+ import math
+ import matplotlib.pyplot as plt
   
-  def right_derivative(x: Callable, xi:float, dx: float) -> float:
+ def right_derivative(x: Callable, xi:float, dx: float) -> float:
   return (x(xi+dx) - x(xi))/dx
   
 def derivativeError(num: float, an: float) -> float:
